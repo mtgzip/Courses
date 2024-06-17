@@ -1,0 +1,176 @@
+\documentclass{article}
+
+% \documentclass{report}
+% \documentclass{book}
+% \documentclass{beamer}
+% \documentclass[12pt,a4paper]{article}
+% \documentclass[twocolumn,12pt]{article}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage[brazil]{babel}
+\usepackage{booktabs}
+\usepackage{caption} % Pacote para ajustar a legenda
+\usepackage{array} % Pacote necessário para m{5cm}
+\usepackage{amsmath} % Pacote para equações matemáticas
+\usepackage[alf]{abntex2cite} 
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\title{Curso latex GDMA}
+\author{Mateus Guimaraes dos Santos}
+\date{Junho 2024}
+
+\begin{document}
+
+\maketitle
+% \hspace{2em}
+\section{Estrutura do texto}
+ Era uma vez, em uma vila tranquila, um garoto chamado Lucas que adorava observar as estrelas. Toda noite, ele subia ao telhado de sua casa com seu telescópio. Uma noite, ele avistou uma estrela cadente que parecia brilhar mais intensamente do que qualquer outra. Curioso, Lucas fez um pedido: desejou encontrar um amigo especial.
+
+Na manhã seguinte, enquanto explorava a floresta próxima, Lucas encontrou um filhote de coruja preso em alguns galhos. Ele rapidamente ajudou a pequena coruja, que o seguiu até sua casa. Lucas e a coruja, a quem ele chamou de Astro, se tornaram inseparáveis. A partir daquele dia, Lucas nunca mais se sentiu sozinho, sabendo que seu desejo havia sido atendido de uma forma mágica e inesperada.
+\section{Formatação}
+% Texto formatado
+\textbf{Este texto está em negrito.}
+
+\textit{Este texto está em itálico.}
+
+\underline{Este texto está sublinhado.}
+
+% Lista enumerada
+\begin{enumerate}
+    \item Primeiro item enumerado
+    \item Segundo item enumerado
+    \item Terceiro item enumerado
+\end{enumerate}
+
+% Lista não enumerada
+\begin{itemize}
+    \item Primeiro item não enumerado
+    \item Segundo item não enumerado
+    \item Terceiro item não enumerado
+\end{itemize}
+
+\section{Figuaras}
+O grupo gdma tem o seguite logo ~\ref{fig:logo_gdma}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=7cm,height=7cm]{gdma.jpg}
+    \caption{Logo GDMA}
+    \label{fig:logo_gdma}
+\end{figure}
+
+\section{Tabelas}
+\subsection{Quadros Simples}
+
+\begin{tabular}{|c|c|c}
+    \hline
+    Nome & Idade & Cidade \\ \hline
+    Alice & 30 & São Paulo \\ \hline
+    Bob & 25 & Rio de Janeiro \\ \hline
+    Carol & 28 & Belo Horizonte \\ \hline
+\end{tabular}
+
+\subsection{Tabelas Complexas}
+\begin{tabular}{lcr}
+    \toprule
+    Nome  & Idade & Cidade \\ \midrule
+    Alice & 30    & São Paulo \\ 
+    Bob   & 25    & Rio de Janeiro \\ 
+    Carol & 28    & Belo Horizonte \\ 
+    cassiane & * & capelinha \\ \bottomrule
+\end{tabular}
+\subsection{Cronogramas}
+O cronograma do projeto de pesquisa está na tabela ~\ref{tab:cronograma_pesquisa}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|m{4cm}|c|c|c|c|c|c|c|}
+        \hline
+        & \multicolumn{2}{c|}{2022} & \multicolumn{2}{c|}{2023} & \multicolumn{2}{c|}{2024} & \multicolumn{1}{c|}{2025} \\ \cline{2-8}
+        Atividades & Jan-jun & Jul-dez & Jan-jun & Jul-dez & Jan-jun & Jul-dez & Jan-jun \\ \hline
+        Revisão bibliográfica & X & X &  &  &  &  &  \\ \hline
+        Coleta de dados &  &  & X & X & X &  &  \\ \hline
+        Análise de dados &  &  &  & X & X & X &  \\ \hline
+        Redação do artigo &  &  &  &  &  & X & X \\ \hline
+        Revisão e submissão &  &  &  &  &  &  & X \\ \hline
+    \end{tabular}
+    \caption{Cronograma do projeto de pesquisa}
+    \label{tab:cronograma_pesquisa}
+\end{table}
+
+
+\section{Formulas matemáticas}
+\subsection{Equações clássicas melhoramento}
+\hspace{2em} O seguinte modelo será usado avaliar oos efeitos aditivos e não aditivos sobre as diferentes características :
+\begin{equation}
+    y=X\beta + Wa + Wd + e
+\end{equation}
+em que $y$ é o vetor de observações (IDP, IPP, ou PL); $\beta$ é o vetor de efeitos fixos; $a$ é o vetor de efeitos genéticos aditivos aleatórios; 
+$d$ é o vetor de efeitos genéticos de dominância aleatório;s e \textbf{$X$},  \textbf{$W$} são matrizes de incidência relacionando observações a efeitos fixos e aleatórios respectivamente.
+
+É assumido que:
+\[
+\mathbf{a} \sim \mathcal{N}(0, \mathbf{G}\sigma_a^2),
+\mathbf{d} \sim \mathcal{N}(0, \mathbf{D}\sigma_d^2),
+\mathbf{e} \sim \mathcal{N}(0, \mathbf{I}\sigma_e^2) 
+\]
+em que $\sigma_a^2$ é a variância genética aditiva, $\sigma_d^2$ a variância genética de dominância, $I$ é uma matriz identidade, $G$, $D$ são as matrizes de relacionamento aditiva e dominância respectivamente.
+\subsection{Equações numeradas}
+Um sistema de equações lineares pode ser representado da seguinte forma:
+\begin{align}
+    2x + y &= 1 \\ % usamos \\ para formar duas equações
+    x - y &= 2
+\end{align}
+
+A solução para esse sistema é $x = -1$ e $y = 3$.
+
+\section{Citações}
+\subsection{Citações diretas}
+Segundo \citeonline{Legarra2018}. Segundo \citeonline{VanRaden2008}
+\subsection{Citações indiretas}
+Usamos os programas da família blupf90+ \cite{Misztal2018}.
+
+\section{Pseudo códigos}
+
+\begin{algorithm}
+\caption{Matriz Aditiva}
+\begin{algorithmic}[1]
+\Function{MatrizAditiva}{$geno$}
+    \State $n \gets$ número de animais em $geno$
+    \State $k \gets$ número de snps em $geno$
+    \State $p \gets \frac{1}{2n} \sum_{i=1}^{n} geno[i,:]$
+    \Comment{Calcula a frequência de p para cada coluna}
+    \State $q \gets 1 - p$
+    \Comment{Calcula q pela diferença de p para cada coluna}
+    \State Crie uma matriz $Z$ de tamanho $n \times k$ inicializada com 0
+    \Comment{Inicializa a matriz $Z$}
+    \For{$j$ de $1$ até $k$}
+        \For{$i$ de $1$ até $n$}
+            \If{$geno[i,j] = 2$}
+                \State $Z[i,j] \gets 2 - 2 \times p[j]$
+                \Comment{Atribui para valores 2}
+            \ElsIf{$geno[i,j] = 1$}
+                \State $Z[i,j] \gets 1 - 2 \times p[j]$
+                \Comment{Atribui para valores 1}
+            \ElsIf{$geno[i,j] = 0$}
+                \State $Z[i,j] \gets -2 \times p[j]$
+                \Comment{Atribui para valores 0}
+            \EndIf
+        \EndFor
+    \EndFor
+    \State $denominador \gets 2 \times \sum_{j=1}^{k} p[j] \times q[j]$
+    \Comment{Calcula o denominador}
+    \State $ZZ' \gets Z \times Z^T$
+    \Comment{Multiplica $Z$ pela sua transposta}
+    \State $GMATRIX \gets \frac{ZZ'}{denominador}$
+    \Comment{Calcula a matriz resultante}
+    \State \textbf{return} $GMATRIX$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+\bibliography{ref.bib}    
+
+\end{document}
